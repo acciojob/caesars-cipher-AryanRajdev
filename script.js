@@ -31,16 +31,26 @@ const lookup = {
   ",": ",",
 };
 
-function rot13(encodedStr) {
+function rot13(str) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
+	for(let i =0 ; i<str.length ; i++){
+		if(str[i]>="A" && str[i]<="Z"){
+ 		 // console.log(str[i]);
+		decodedArr.push(lookup[str[i]]);
+		}
+		else{
+		    decodedArr.push(str[i]);
+		}
+	}
+		
 
-  return; //return decodedArr
+  return decodedArr; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(rot13("SERR YBIR? NPPVBWBO"));
+console.log(rot13("SERR YBIR? NPPVBWBO"));
 
 // Do not change this line
 window.rot13 = rot13;
